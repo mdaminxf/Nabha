@@ -878,42 +878,90 @@
     }
     
   </script>
-  <!-- Add this right after the navigation section, before the Hero Section -->
-<div id="voiceControlPanel" style="position: fixed; top: 80px; right: 20px; z-index: 1000; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); max-width: 320px;">
-  <h3 style="margin: 0 0 15px 0; font-size: 18px; color: #0891b2;" data-lang="voice_heading">🎤 Voice Controls</h3>
-  
-  
-  <div style="margin-bottom: 15px;">
-    <button id="toggleVoiceCommands" class="btn-primary" style="width: 100%; padding: 12px; border-radius: 8px; font-size: 14px; cursor: pointer;" data-lang="voice_btn_start">
+<!-- Voice Control Panel -->
+<div
+  id="voiceControlPanel"
+  class="fixed top-20 right-5 z-50 bg-white p-5 rounded-xl shadow-2xl max-w-xs w-11/12 sm:w-80 transition-all duration-300"
+>
+  <!-- Heading -->
+  <h3
+    class="text-lg font-semibold text-cyan-600 mb-4 text-center"
+    data-lang="voice_heading"
+  >
+    🎤 Voice Controls
+  </h3>
+
+  <!-- Voice Commands -->
+  <div class="mb-4">
+    <button
+      id="toggleVoiceCommands"
+      class="w-full py-3 rounded-lg text-sm font-medium bg-cyan-600 text-white hover:bg-cyan-700 transition-colors"
+      data-lang="voice_btn_start"
+    >
       Start Voice Commands
     </button>
-    <div id="voiceCommandStatus" style="margin-top: 8px; padding: 8px; background: #f3f4f6; border-radius: 6px; font-size: 13px; text-align: center;" data-lang="voice_status_click">
+    <div
+      id="voiceCommandStatus"
+      class="mt-2 p-2 bg-gray-100 rounded-md text-center text-sm text-gray-700"
+      data-lang="voice_status_click"
+    >
       Click to activate
     </div>
   </div>
 
-  <div style="margin-bottom: 15px;">
-    <button id="toggleTextToSpeech" class="btn-outline" style="width: 100%; padding: 12px; border-radius: 8px; font-size: 14px; cursor: pointer;" data-lang="tts_btn_enable">
+  <!-- Text-to-Speech -->
+  <div class="mb-4">
+    <button
+      id="toggleTextToSpeech"
+      class="w-full py-3 rounded-lg text-sm font-medium border border-cyan-600 text-cyan-600 hover:bg-cyan-600 hover:text-white transition-colors"
+      data-lang="tts_btn_enable"
+    >
       Enable Text-to-Speech
     </button>
-    <div id="ttsStatus" style="margin-top: 8px; padding: 8px; background: #f3f4f6; border-radius: 6px; font-size: 13px; text-align: center;" data-lang="tts_status_inactive">
+    <div
+      id="ttsStatus"
+      class="mt-2 p-2 bg-gray-100 rounded-md text-center text-sm text-gray-700"
+      data-lang="tts_status_inactive"
+    >
       TTS: Inactive
     </div>
   </div>
 
-  <div style="margin-bottom: 15px;">
-    <label style="display: block; margin-bottom: 5px; font-size: 13px; color: #4b5563;" data-lang="tts_speed_label">Speech Speed</label>
-    <input type="range" id="ttsSpeed" min="0.5" max="2" step="0.1" value="1" style="width: 100%;">
-    <div style="display: flex; justify-content: space-between; font-size: 11px; color: #6b7280;">
+  <!-- Speech Speed -->
+  <div class="mb-4">
+    <label
+      for="ttsSpeed"
+      class="block mb-1 text-sm font-medium text-gray-600"
+      data-lang="tts_speed_label"
+      >Speech Speed</label
+    >
+    <input
+      type="range"
+      id="ttsSpeed"
+      min="0.5"
+      max="2"
+      step="0.1"
+      value="1"
+      class="w-full accent-cyan-600"
+    />
+    <div
+      class="flex justify-between text-xs text-gray-500 mt-1"
+    >
       <span data-lang="tts_speed_slow">Slow</span>
       <span data-lang="tts_speed_normal">Normal</span>
       <span data-lang="tts_speed_fast">Fast</span>
     </div>
   </div>
 
-  <button id="stopSpeech" class="btn-outline" style="width: 100%; padding: 10px; border-radius: 8px; font-size: 13px; cursor: pointer; margin-bottom: 15px;" data-lang="stop_speech">
+  <!-- Stop Button -->
+  <button
+    id="stopSpeech"
+    class="w-full py-2.5 rounded-lg text-sm font-medium border border-gray-400 text-gray-700 hover:bg-gray-100 transition-colors"
+    data-lang="stop_speech"
+  >
     Stop Speech
   </button>
+</div>
 
  <!-- Replace the existing help section div -->
 <div style="background: #e0f2fe; padding: 12px; border-radius: 8px; font-size: 12px; line-height: 1.5;" data-lang="voice_help_block">
